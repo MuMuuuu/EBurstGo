@@ -28,8 +28,8 @@ func LoadDict(filePath string) []string {
 	return dict
 }
 
-func LoadAllDict(filePath string) map[string]string {
-	var dict map[string]string
+func LoadAllDict(filePath string) [][2]string {
+	var dict [][2]string
 
 	fp, _ := os.Open(filePath)
 	r := bufio.NewReader(fp)
@@ -43,7 +43,7 @@ func LoadAllDict(filePath string) map[string]string {
 
 		if string(line) != "" {
 			username, password, _ := strings.Cut(string(line), ":")
-			dict[username] = password
+			dict = append(dict, [2]string{username, password})
 		}
 	}
 

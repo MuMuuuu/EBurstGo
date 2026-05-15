@@ -46,7 +46,7 @@ var ExchangeEndpoints = map[string]string{
 }
 
 var (
-	UserPassDict map[string]string
+	UserPassDict [][2]string
 	UserDict     []string
 	PassDict     []string
 	Worker       BruteWorker

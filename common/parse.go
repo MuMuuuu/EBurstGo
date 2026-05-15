@@ -67,7 +67,7 @@ func ParseConfig(config *Config) {
 	if len(UserPassDict) == 0 {
 		for _, password := range PassDict {
 			for _, username := range UserDict {
-				UserPassDict[username] = password
+				UserPassDict = append(UserPassDict, [2]string{username, password})
 			}
 		}
 	}

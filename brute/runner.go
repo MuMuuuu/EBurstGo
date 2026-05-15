@@ -93,8 +93,8 @@ func Brute(config *common.Config) {
 		PthMode: config.PthMode,
 	}
 
-	for k, v := range common.UserPassDict {
-		task <- []string{k, v}
+	for _, pair := range common.UserPassDict {
+		task <- []string{pair[0], pair[1]}
 	}
 	close(task)
 
